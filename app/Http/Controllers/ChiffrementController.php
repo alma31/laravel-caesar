@@ -12,8 +12,30 @@ class ChiffrementController extends Controller{
 		return view ('encryptext', ['chiffre' => $chiffre]);
 	}
 
-	public function postForm(Request $request){
+	public function viewForm(){
 		return view('formCrypt');
+	}
+
+	public function postForm(Request $request){
+		$décalage = $request->decalage;
+		$arr = str_split($request->message,1);
+		$arr2 = range('a','z');
+		$chiffre = "";
+
+		foreach ($arr as $value) {
+
+			$val = $value;
+			$val3 = array_search($val,$arr2)+$décalage;
+			$val = $arr2[$val3];
+			$chiffre .= $val;
+
+		}
+
+		$message = new Chiffrement();
+		$message->text = $chiffre;
+		$message->save();
+		return redirect()->action('ChiffrementController@getview');
 
 	}
+
 }

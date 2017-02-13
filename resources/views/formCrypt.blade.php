@@ -8,8 +8,10 @@
 <body>
 	<form action="/" method="POST">
 		{{csrf_field()}}
-		<input placeholder="Texte a crypter" type="text">
+		<input name="message" placeholder="Texte a crypter" type="text" name="text">
+		<input name="decalage" placeholder="Nombre de decalage" type="number">
 		<input class="ui button" value="Crypter le texte" type="submit">
+
 	</form>
 </body>
 </html>

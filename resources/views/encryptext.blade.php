@@ -20,11 +20,8 @@
 		@endforeach
 	</table>
 
-	<form action="/formCrypt" method="POST">
-		{{csrf_field()}}
-		<input class="ui button" value="Crypter une phrase" type="submit">
-	</form>
 
+<a href="/formCrypt"><button class="ui button">Crypter un message</button></a>
 
 
 </body>

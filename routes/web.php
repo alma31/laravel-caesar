@@ -12,4 +12,6 @@
 */
 
 Route::get('/','ChiffrementController@getview');
-Route::post('/formCrypt', 'ChiffrementController@postForm');
+Route::get('/formCrypt', 'ChiffrementController@viewForm');
+Route::post('/', 'ChiffrementController@postForm');
+
